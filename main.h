@@ -21,6 +21,7 @@
 int RunProcDMACFilter(const FilterActivation *fa, const FilterFunctions *ff);
 long ParamProcDMACFilter(FilterActivation *fa, const FilterFunctions *ff);
 int StartProcDMACFilter(FilterActivation *fa, const FilterFunctions *ff);
+int EndProcDMACFilter(FilterActivation *fa, const FilterFunctions *ff);
 int InitProcDMACFilter(FilterActivation *fa, const FilterFunctions *ff);
 
 FilterDefinition *fd_DMACFilter;
@@ -40,7 +41,7 @@ FilterDefinition filterDef_DMACFilter =
 	NULL,						// configProc
 	NULL,						// stringProc
 	StartProcDMACFilter,		// startProc
-	NULL,						// endProc
+	EndProcDMACFilter,			// endProc
 	NULL,						// script_obj
 	NULL,						// fssProc
 };

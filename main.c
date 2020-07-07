@@ -214,6 +214,19 @@ int InitProcDMACFilter(FilterActivation *fa, const FilterFunctions *ff)
 	return 0;
 }
 
+int EndProcDMACFilter(FilterActivation *fa, const FilterFunctions *ff) 
+{
+	
+	/* Pointer to MFD */
+	MACFilterData *mfd = (MACFilterData *)fa->filter_data;
+
+	/* Default mode */
+	mfd->vsam = -1;
+	mfd->start_status = 0;
+
+	return 0;
+}
+
 int StartProcDMACFilter(FilterActivation *fa, const FilterFunctions *ff)
 {
 	/* Pointer to MFD */
